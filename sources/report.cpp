@@ -1,6 +1,6 @@
 // Copyright 2020 Kidinova Daria <daria.kidinova@gmail.com>
 
-#include "../include/functions.h"
+#include <functions.h>
 
 YAML::Node WriteOneExperiment(const size_t &counter, const float &bufferSize,
                               const double &sortingTime) {

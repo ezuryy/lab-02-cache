@@ -27,7 +27,7 @@ hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
 add_library(lab02 STATIC
-        include/functions.h sources/experiment.cpp sources/main.cpp
+        sources/experiment.cpp sources/main.cpp
         sources/printer.cpp sources/report.cpp)
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp

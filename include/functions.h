@@ -21,9 +21,23 @@ using std::cout;
 using std::string;
 using std::vector;
 
-int64_t *MakeRandArray(const size_t &size);
+const string DIRECT = "direct";
+const string REVERSE = "reverse";
+const string RANDOM = "random";
 
-double ExperimentDuration(const float &bufferSize, const string &TravelVariant);
+std::unique_ptr<int64_t[]> MakeRandArray(const size_t &size);
+
+std::unique_ptr<int64_t[]> WarmingUp(std::unique_ptr<int64_t[]> arr,
+                                     const size_t& size,
+                                     const string &travelVariant,
+                                     int64_t &elem);
+
+std::unique_ptr<int64_t[]> Duration(std::unique_ptr<int64_t[]> arr,
+                                    const size_t& size,
+                                    const string &travelVariant, int64_t &elem);
+
+double TimeOfExperimentDuration(const float &bufferSize, //mb
+                                const string &TravelVariant);
 
 void PrintResultsOfExperiment(const size_t &counter, const float &bufferSize,
                               const double &sortingTime,
